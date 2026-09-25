@@ -89,19 +89,11 @@ BEGIN
     BEGIN
         BLOCK "040904e4"
         BEGIN
-<<<<<<< HEAD
-            VALUE "CompanyName", "com.example" "\0"
-            VALUE "FileDescription", "frontend" "\0"
-            VALUE "FileVersion", VERSION_AS_STRING "\0"
-            VALUE "InternalName", "frontend" "\0"
-            VALUE "LegalCopyright", "Copyright (C) 2026 com.example. All rights reserved." "\0"
-=======
             VALUE "CompanyName", "com.pennypal" "\0"
             VALUE "FileDescription", "frontend" "\0"
             VALUE "FileVersion", VERSION_AS_STRING "\0"
             VALUE "InternalName", "frontend" "\0"
             VALUE "LegalCopyright", "Copyright (C) 2026 com.pennypal. All rights reserved." "\0"
->>>>>>> a3f8bec3b1d542d3cfd38835f368e651ecf3b70c
             VALUE "OriginalFilename", "frontend.exe" "\0"
             VALUE "ProductName", "frontend" "\0"
             VALUE "ProductVersion", VERSION_AS_STRING "\0"
