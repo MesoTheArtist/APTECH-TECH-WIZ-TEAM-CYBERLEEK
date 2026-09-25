@@ -3,8 +3,16 @@
 Thumbs.db
 *.swp
 *.log
-.vscode/
-.idea/
+
+# Editor directories (keep workspace launch settings if needed, ignore user cache)
+.idea/*.xml
+!.idea/workspace.xml
+!.idea/tasks.xml
+.vscode/*
+!.vscode/settings.json
+!.vscode/tasks.json
+!.vscode/launch.json
+!.vscode/extensions.json
 
 # Environment Secrets
 .env
@@ -17,14 +25,32 @@ backend/node_modules/
 backend/dist/
 backend/coverage/
 
-# Flutter / Dart
+# Flutter / Dart General
 **/build/
 **/.dart_tool/
 **/.flutter-plugins
 **/.flutter-plugins-dependencies
 **/.pub-cache/
 **/.pub/
+**/coverage/
+
+# Android
 **/android/local.properties
 **/android/.gradle/
+**/android/captures/
+**/android/gradle-app.setting
+
+# iOS / macOS
 **/ios/Pods/
 **/ios/Flutter/ephemeral/
+**/ios/Flutter/Flutter.podspec
+**/ios/Flutter/Generated.xcconfig
+**/ios/Flutter/app.framework
+**/ios/Runner.gitignore
+**/ios/Runner.xcodeproj/project.xcworkspace/
+**/ios/Runner.xcworkspace/
+
+# Web / Desktop Ephemeral Files
+**/windows/flutter/ephemeral/
+**/linux/flutter/ephemeral/
+**/macOS/flutter/ephemeral/
