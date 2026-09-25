@@ -7,7 +7,11 @@ project(runner LANGUAGES CXX)
 set(BINARY_NAME "frontend")
 # The unique GTK application identifier for this application. See:
 # https://wiki.gnome.org/HowDoI/ChooseApplicationID
+<<<<<<< HEAD
 set(APPLICATION_ID "com.example.frontend")
+=======
+set(APPLICATION_ID "com.pennypal.frontend")
+>>>>>>> a3f8bec3b1d542d3cfd38835f368e651ecf3b70c
 
 # Explicitly opt in to modern CMake behaviors to avoid warnings with recent
 # versions of CMake.
