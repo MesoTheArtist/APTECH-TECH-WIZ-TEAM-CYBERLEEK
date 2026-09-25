@@ -6,11 +6,11 @@ Welcome to **PennyPal**—a full-stack personal finance application. This projec
 
 ## Technical Stack & Tooling
 
-| Component | Technology | Prerequisites |
-| --- | --- | --- |
-| **Backend** | Node.js (v18+), Express, MongoDB | [Node.js](https://nodejs.org/?utm_source=gemini), [MongoDB](https://www.mongodb.com/?utm_source=gemini) |
-| **Frontend** | Flutter SDK (v3.x+), Dart | [Flutter SDK](https://docs.flutter.dev/get-started/install?utm_source=gemini) |
-| **Database** | MongoDB (Local or Atlas) | Mongo Shell / Compass |
+| Component    | Technology                       | Prerequisites                                                                                           |
+| ------------ | -------------------------------- | ------------------------------------------------------------------------------------------------------- |
+| **Backend**  | Node.js (v18+), Express, MongoDB | [Node.js](https://nodejs.org/?utm_source=gemini), [MongoDB](https://www.mongodb.com/?utm_source=gemini) |
+| **Frontend** | Flutter SDK (v3.x+), Dart        | [Flutter SDK](https://docs.flutter.dev/get-started/install?utm_source=gemini)                           |
+| **Database** | MongoDB (Local or Atlas)         | Mongo Shell / Compass                                                                                   |
 
 ---
 
@@ -45,7 +45,7 @@ Welcome to **PennyPal**—a full-stack personal finance application. This projec
 Clone the repository and navigate to the project root:
 
 ```bash
-git clone <repository-url>
+git clone https://github.com/MesoTheArtist/APTECH-TECH-WIZ-TEAM-CYBERLEEK.git pennypal
 cd pennypal
 
 ```
@@ -55,21 +55,22 @@ cd pennypal
 ### 2. Backend Setup (`/backend`)
 
 1. **Navigate to the backend directory:**
+
 ```bash
 cd backend
 
 ```
 
-
 2. **Install Node.js dependencies:**
+
 ```bash
 npm install
 
 ```
 
-
 3. **Configure Environment Variables:**
-Create a `.env` file in the `backend/` directory:
+   Create a `.env` file in the `backend/` directory:
+
 ```env
 PORT=5000
 MONGO_URI=mongodb://localhost:27017/pennypal
@@ -78,23 +79,21 @@ NODE_ENV=development
 
 ```
 
-
 4. **Start the API Server:**
-* **Development Mode (Auto-reload):**
+
+- **Development Mode (Auto-reload):**
+
 ```bash
 npm run dev
 
 ```
 
+- **Production Mode:**
 
-* **Production Mode:**
 ```bash
 npm start
 
 ```
-
-
-
 
 The backend runs by default at `http://localhost:5000`.
 
@@ -103,51 +102,49 @@ The backend runs by default at `http://localhost:5000`.
 ### 3. Frontend Setup (`/frontend`)
 
 1. **Navigate to the frontend directory:**
+
 ```bash
 cd ../frontend
 
 ```
 
-
 2. **Verify Flutter Environment & Connected Devices:**
+
 ```bash
 flutter doctor
 flutter devices
 
 ```
 
-
 3. **Install Flutter Dependencies:**
+
 ```bash
 flutter pub get
 
 ```
 
-
 4. **Run the Application:**
-* **Run on target connected device / emulator:**
+
+- **Run on target connected device / emulator:**
+
 ```bash
 flutter run
 
 ```
 
+- **Run explicitly on Chrome / Web:**
 
-* **Run explicitly on Chrome / Web:**
 ```bash
 flutter run -d chrome
 
 ```
 
+- **Run on a specific Android/iOS emulator:**
 
-* **Run on a specific Android/iOS emulator:**
 ```bash
 flutter run -d <device_id>
 
 ```
-
-
-
-
 
 ---
 
@@ -179,11 +176,12 @@ flutter build ios           # Build iOS release bundle
 ## Branching & Commit Workflow
 
 1. **Branch Naming Standard:**
-* `feature/feature-name` (e.g., `feature/budget-analytics`)
-* `bugfix/issue-description` (e.g., `bugfix/jwt-expiration`)
-* `chore/task-name` (e.g., `chore/update-dependencies`)
 
+- `feature/feature-name` (e.g., `feature/budget-analytics`)
+- `bugfix/issue-description` (e.g., `bugfix/jwt-expiration`)
+- `chore/task-name` (e.g., `chore/update-dependencies`)
 
 2. **Pull Request Protocol:**
-* Ensure `flutter analyze` and `flutter test` pass with zero errors.
-* Verify local backend server tests pass before opening a PR to `main`.
+
+- Ensure `flutter analyze` and `flutter test` pass with zero errors.
+- Verify local backend server tests pass before opening a PR to `main`.
