@@ -1,7 +1,17 @@
-// Example: src/routes/auth.routes.js
-const express = require('express');
+const express = require("express");
 const router = express.Router();
+const {
+  getTransactions,
+  createTransaction,
+  updateTransaction,
+  deleteTransaction,
+} = require("../controllers/transaction.controller");
+const { protect } = require("../middleware/auth.middleware");
 
-// ... routes defined here ...
+router.use(protect); // Protect all transaction routes
 
-module.exports = router; // 👈 CRITICAL: Must be at the very bottom
+router.route("/").get(getTransactions).post(createTransaction);
+
+router.route("/:id").put(updateTransaction).delete(deleteTransaction);
+
+module.exports = router;

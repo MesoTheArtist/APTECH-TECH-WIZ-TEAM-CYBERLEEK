@@ -1,9 +1,9 @@
-require('dotenv').config();
-const app = require('./app');
+require("dotenv").config();
+const app = require("./app");
+const connectDB = require("./config/db");
 
-// Standard practice: Add DB connection here once db.js is ready
-// const connectDB = require('./config/db');
-// connectDB();
+// Connect to MongoDB
+connectDB();
 
 const PORT = process.env.PORT || 5000;
 
