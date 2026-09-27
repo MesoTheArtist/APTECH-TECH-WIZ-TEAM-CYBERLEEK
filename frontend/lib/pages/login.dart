@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/gestures.dart';
 
-class Register extends StatelessWidget {
-  const Register({super.key});
+class Login extends StatelessWidget {
+  const Login({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -17,7 +17,7 @@ class Register extends StatelessWidget {
 
                 const SizedBox(height: 10),
 
-                // Back button and logo
+                // Logo
                 Row(
                   children: [
                     IconButton(
@@ -44,11 +44,11 @@ class Register extends StatelessWidget {
                   ],
                 ),
 
-                const SizedBox(height: 20),
+                const SizedBox(height: 30),
 
                 // Title
                 const Text(
-                  'Create Account',
+                  'Welcome back!',
                   style: TextStyle(
                     fontSize: 20,
                     fontWeight: FontWeight.w600,
@@ -59,8 +59,8 @@ class Register extends StatelessWidget {
 
                 // Description
                 const Text(
-                  'Start your journey to better\n'
-                  'money management.',
+                  'Log in to your account and\n'
+                  'continue your financial journey.',
                   style: TextStyle(
                     fontSize: 12,
                     color: Colors.blueGrey,
@@ -69,21 +69,6 @@ class Register extends StatelessWidget {
                 ),
 
                 const SizedBox(height: 18),
-
-                // Full Name
-                TextField(
-                  keyboardType: TextInputType.text,
-                  decoration: InputDecoration(
-                    labelText: 'Full Name',
-                    hintText: 'Enter your full name',
-                    prefixIcon: const Icon(Icons.person_outline),
-                    border: OutlineInputBorder(
-                      borderRadius: BorderRadius.circular(10),
-                    ),
-                  ),
-                ),
-
-                const SizedBox(height: 10),
 
                 // Email
                 TextField(
@@ -100,88 +85,40 @@ class Register extends StatelessWidget {
 
                 const SizedBox(height: 10),
 
-                // Mobile Number
-                TextField(
-                  keyboardType: TextInputType.phone,
-                  decoration: InputDecoration(
-                    labelText: 'Mobile Number',
-                    hintText: 'Enter your mobile number',
-                    prefixIcon: const Icon(Icons.phone_android),
-                    border: OutlineInputBorder(
-                      borderRadius: BorderRadius.circular(10),
-                    ),
-                  ),
-                ),
-
-                const SizedBox(height: 10),
-
                 // Password
                 TextField(
                   obscureText: true,
                   decoration: InputDecoration(
                     labelText: 'Password',
-                    hintText: 'Create a password',
+                    hintText: 'Enter your password',
                     prefixIcon: const Icon(Icons.lock_outline),
-                    suffixIcon: const Icon(Icons.visibility_off_outlined),
+                    suffixIcon: const Icon(
+                      Icons.visibility_off_outlined,
+                    ),
                     border: OutlineInputBorder(
                       borderRadius: BorderRadius.circular(10),
                     ),
                   ),
                 ),
 
-                const SizedBox(height: 10),
+                const SizedBox(height: 8),
 
-                // Confirm Password
-                TextField(
-                  obscureText: true,
-                  decoration: InputDecoration(
-                    labelText: 'Confirm Password',
-                    hintText: 'Confirm your password',
-                    prefixIcon: const Icon(Icons.lock_outline),
-                    suffixIcon: const Icon(Icons.visibility_off_outlined),
-                    border: OutlineInputBorder(
-                      borderRadius: BorderRadius.circular(10),
+                // Forgot password
+                Align(
+                  alignment: Alignment.centerRight,
+                  child: const Text(
+                    'Forgot Password?',
+                    style: TextStyle(
+                      fontSize: 11,
+                      color: Colors.teal,
+                      fontWeight: FontWeight.bold,
                     ),
                   ),
                 ),
 
-                const SizedBox(height: 12),
+                const SizedBox(height: 20),
 
-                // Terms
-                Row(
-                  children: [
-                    SizedBox(
-                      width: 25,
-                      height: 25,
-                      child: Checkbox(
-                        value: true,
-                        onChanged: (value) {},
-                        activeColor: Colors.teal,
-                      ),
-                    ),
-
-                    const SizedBox(width: 5),
-
-                    const Text(
-                      'I agree to the ',
-                      style: TextStyle(fontSize: 11),
-                    ),
-
-                    const Text(
-                      'Terms & Privacy Policy',
-                      style: TextStyle(
-                        fontSize: 11,
-                        color: Colors.teal,
-                        fontWeight: FontWeight.bold,
-                        decoration: TextDecoration.underline,
-                      ),
-                    ),
-                  ],
-                ),
-
-                const SizedBox(height: 12),
-
-                // Create Account button
+                // Login button
                 SizedBox(
                   width: double.infinity,
                   height: 48,
@@ -195,7 +132,7 @@ class Register extends StatelessWidget {
                       ),
                     ),
                     child: const Text(
-                      'Create Account',
+                      'Log In',
                       style: TextStyle(
                         fontWeight: FontWeight.bold,
                       ),
@@ -205,7 +142,7 @@ class Register extends StatelessWidget {
 
                 const SizedBox(height: 15),
 
-                // Login
+                // Create account
                 Center(
                   child: RichText(
                     text: TextSpan(
@@ -215,18 +152,19 @@ class Register extends StatelessWidget {
                       ),
                       children: [
                         const TextSpan(
-                          text: 'Already have an account? ',
+                          text: 'New to PennyPal? ',
                         ),
 
                         TextSpan(
-                          text: 'Log in',
+                          text: 'Create account',
                           style: const TextStyle(
                             color: Colors.teal,
                             fontWeight: FontWeight.bold,
+                            decoration: TextDecoration.underline,
                           ),
                           recognizer: TapGestureRecognizer()
                             ..onTap = () {
-                              Navigator.pushNamed(context, '/login');
+                              Navigator.pushNamed(context, '/register');
                             },
                         ),
                       ],

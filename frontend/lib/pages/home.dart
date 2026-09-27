@@ -69,7 +69,6 @@ class Home extends StatelessWidget {
                   height: 50,
                   child: ElevatedButton(
                     onPressed: () {
-                      // 🚀 Navigates to the register page using its named route
                       Navigator.pushNamed(context, '/register');
                     },
                     style: ElevatedButton.styleFrom(
@@ -96,7 +95,9 @@ class Home extends StatelessWidget {
                   width: double.infinity,
                   height: 50,
                   child: OutlinedButton(
-                    onPressed: () {},
+                    onPressed: () {
+                      Navigator.pushNamed(context, '/login');
+                    },
                     style: OutlinedButton.styleFrom(
                       foregroundColor: Colors.teal,
                       side: const BorderSide(
