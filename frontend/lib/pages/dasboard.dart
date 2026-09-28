@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import '../components/navbar.dart';
 
 class Dashboard extends StatelessWidget {
   const Dashboard({super.key});
@@ -125,11 +124,14 @@ class Dashboard extends StatelessWidget {
                           fontWeight: FontWeight.bold,
                         ),
                       ),
+
                       const SizedBox(height: 8),
+
                       const Text(
                         'Budget Status: 68% Spent (\$1,020 / \$1,500)',
                         style: TextStyle(fontSize: 12),
                       ),
+
                       const SizedBox(height: 7),
 
                       LinearProgressIndicator(
@@ -146,7 +148,8 @@ class Dashboard extends StatelessWidget {
                         children: [
                           Expanded(
                             child: Column(
-                              crossAxisAlignment: CrossAxisAlignment.start,
+                              crossAxisAlignment:
+                                  CrossAxisAlignment.start,
                               children: [
                                 const Text(
                                   'Groceries',
@@ -156,8 +159,10 @@ class Dashboard extends StatelessWidget {
                                 LinearProgressIndicator(
                                   value: 0.52,
                                   minHeight: 6,
-                                  borderRadius: BorderRadius.circular(10),
-                                  backgroundColor: Colors.grey.shade300,
+                                  borderRadius:
+                                      BorderRadius.circular(10),
+                                  backgroundColor:
+                                      Colors.grey.shade300,
                                   color: Colors.teal,
                                 ),
                                 const SizedBox(height: 3),
@@ -171,7 +176,8 @@ class Dashboard extends StatelessWidget {
                           const SizedBox(width: 15),
                           Expanded(
                             child: Column(
-                              crossAxisAlignment: CrossAxisAlignment.start,
+                              crossAxisAlignment:
+                                  CrossAxisAlignment.start,
                               children: [
                                 const Text(
                                   'Dining',
@@ -181,8 +187,10 @@ class Dashboard extends StatelessWidget {
                                 LinearProgressIndicator(
                                   value: 0.75,
                                   minHeight: 6,
-                                  borderRadius: BorderRadius.circular(10),
-                                  backgroundColor: Colors.grey.shade300,
+                                  borderRadius:
+                                      BorderRadius.circular(10),
+                                  backgroundColor:
+                                      Colors.grey.shade300,
                                   color: Colors.amber,
                                 ),
                                 const SizedBox(height: 3),
@@ -202,7 +210,8 @@ class Dashboard extends StatelessWidget {
                         children: [
                           Expanded(
                             child: Column(
-                              crossAxisAlignment: CrossAxisAlignment.start,
+                              crossAxisAlignment:
+                                  CrossAxisAlignment.start,
                               children: [
                                 const Text(
                                   'Transport',
@@ -212,8 +221,10 @@ class Dashboard extends StatelessWidget {
                                 LinearProgressIndicator(
                                   value: 0.72,
                                   minHeight: 6,
-                                  borderRadius: BorderRadius.circular(10),
-                                  backgroundColor: Colors.grey.shade300,
+                                  borderRadius:
+                                      BorderRadius.circular(10),
+                                  backgroundColor:
+                                      Colors.grey.shade300,
                                   color: Colors.teal,
                                 ),
                                 const SizedBox(height: 3),
@@ -227,7 +238,8 @@ class Dashboard extends StatelessWidget {
                           const SizedBox(width: 15),
                           Expanded(
                             child: Column(
-                              crossAxisAlignment: CrossAxisAlignment.start,
+                              crossAxisAlignment:
+                                  CrossAxisAlignment.start,
                               children: [
                                 const Text(
                                   'Books',
@@ -237,8 +249,10 @@ class Dashboard extends StatelessWidget {
                                 LinearProgressIndicator(
                                   value: 0.75,
                                   minHeight: 6,
-                                  borderRadius: BorderRadius.circular(10),
-                                  backgroundColor: Colors.grey.shade300,
+                                  borderRadius:
+                                      BorderRadius.circular(10),
+                                  backgroundColor:
+                                      Colors.grey.shade300,
                                   color: Colors.amber,
                                 ),
                                 const SizedBox(height: 3),
@@ -252,59 +266,183 @@ class Dashboard extends StatelessWidget {
                         ],
                       ),
 
-                      const SizedBox(height: 20),
+                      const SizedBox(height: 22),
 
-                      const Text(
-                        'Quick Actions',
-                        style: TextStyle(
-                          fontSize: 16,
-                          fontWeight: FontWeight.bold,
+                      Container(
+                        width: double.infinity,
+                        padding: const EdgeInsets.all(16),
+                        decoration: BoxDecoration(
+                          color: Colors.teal.shade50,
+                          borderRadius: BorderRadius.circular(15),
+                          border: Border.all(
+                            color: Colors.teal.shade100,
+                          ),
                         ),
-                      ),
-                      const SizedBox(height: 10),
+                        child: Column(
+                          crossAxisAlignment:
+                              CrossAxisAlignment.start,
+                          children: [
+                            Row(
+                              children: [
+                                CircleAvatar(
+                                  radius: 21,
+                                  backgroundColor:
+                                      Colors.white,
+                                  child: Icon(
+                                    Icons.savings_outlined,
+                                    color: Colors.teal.shade700,
+                                  ),
+                                ),
+                                const SizedBox(width: 10),
+                                const Expanded(
+                                  child: Column(
+                                    crossAxisAlignment:
+                                        CrossAxisAlignment.start,
+                                    children: [
+                                      Text(
+                                        'Savings Goals',
+                                        style: TextStyle(
+                                          fontSize: 17,
+                                          fontWeight:
+                                              FontWeight.bold,
+                                        ),
+                                      ),
+                                      SizedBox(height: 2),
+                                      Text(
+                                        'Keep working towards your goals.',
+                                        style: TextStyle(
+                                          fontSize: 11,
+                                          color: Colors.blueGrey,
+                                        ),
+                                      ),
+                                    ],
+                                  ),
+                                ),
+                              ],
+                            ),
 
-                      Row(
-                        children: [
-                          Expanded(
-                            child: ElevatedButton.icon(
-                              onPressed: () {},
-                              icon: const Icon(
-                                Icons.add,
-                                color: Colors.teal,
-                              ),
-                              label: const Text(
-                                'Add Expense',
-                                style: TextStyle(color: Colors.black),
-                              ),
-                              style: ElevatedButton.styleFrom(
-                                backgroundColor: Colors.amber,
-                                padding: const EdgeInsets.symmetric(
-                                  vertical: 12,
+                            const SizedBox(height: 15),
+
+                            Row(
+                              mainAxisAlignment:
+                                  MainAxisAlignment.spaceBetween,
+                              children: [
+                                Column(
+                                  crossAxisAlignment:
+                                      CrossAxisAlignment.start,
+                                  children: [
+                                    const Text(
+                                      'Saved',
+                                      style: TextStyle(
+                                        fontSize: 11,
+                                        color: Colors.blueGrey,
+                                      ),
+                                    ),
+                                    const SizedBox(height: 3),
+                                    const Text(
+                                      '\$285,000',
+                                      style: TextStyle(
+                                        fontSize: 17,
+                                        fontWeight:
+                                            FontWeight.bold,
+                                      ),
+                                    ),
+                                  ],
                                 ),
-                              ),
-                            ),
-                          ),
-                          const SizedBox(width: 10),
-                          Expanded(
-                            child: ElevatedButton.icon(
-                              onPressed: () {},
-                              icon: const Icon(
-                                Icons.add,
-                                color: Colors.teal,
-                              ),
-                              label: const Text(
-                                'Add Income',
-                                style: TextStyle(color: Colors.black),
-                              ),
-                              style: ElevatedButton.styleFrom(
-                                backgroundColor: Colors.amber,
-                                padding: const EdgeInsets.symmetric(
-                                  vertical: 12,
+                                Column(
+                                  crossAxisAlignment:
+                                      CrossAxisAlignment.end,
+                                  children: [
+                                    const Text(
+                                      'Target',
+                                      style: TextStyle(
+                                        fontSize: 11,
+                                        color: Colors.blueGrey,
+                                      ),
+                                    ),
+                                    const SizedBox(height: 3),
+                                    const Text(
+                                      '\$800,000',
+                                      style: TextStyle(
+                                        fontSize: 17,
+                                        fontWeight:
+                                            FontWeight.bold,
+                                      ),
+                                    ),
+                                  ],
                                 ),
-                              ),
+                              ],
                             ),
-                          ),
-                        ],
+
+                            const SizedBox(height: 12),
+
+                            LinearProgressIndicator(
+                              value: 0.36,
+                              minHeight: 8,
+                              borderRadius:
+                                  BorderRadius.circular(10),
+                              backgroundColor:
+                                  Colors.white,
+                              color: Colors.teal,
+                            ),
+
+                            const SizedBox(height: 8),
+
+                            Row(
+                              mainAxisAlignment:
+                                  MainAxisAlignment.spaceBetween,
+                              children: [
+                                const Text(
+                                  '36% complete',
+                                  style: TextStyle(
+                                    fontSize: 11,
+                                    fontWeight:
+                                        FontWeight.w600,
+                                    color: Colors.teal,
+                                  ),
+                                ),
+                                TextButton(
+                                  onPressed: () {
+                                    Navigator.pushNamed(
+                                      context,
+                                      '/savings_goals',
+                                    );
+                                  },
+                                  style: TextButton.styleFrom(
+                                    padding: EdgeInsets.zero,
+                                    minimumSize: Size.zero,
+                                    tapTargetSize:
+                                        MaterialTapTargetSize
+                                            .shrinkWrap,
+                                  ),
+                                  child: Row(
+                                    mainAxisSize:
+                                        MainAxisSize.min,
+                                    children: [
+                                      Text(
+                                        'View Savings Goals',
+                                        style: TextStyle(
+                                          color: Colors
+                                              .teal.shade800,
+                                          fontWeight:
+                                              FontWeight.bold,
+                                          fontSize: 12,
+                                        ),
+                                      ),
+                                      const SizedBox(width: 3),
+                                      Icon(
+                                        Icons.arrow_forward,
+                                        size: 16,
+                                        color: Colors
+                                            .teal.shade800,
+                                      ),
+                                    ],
+                                  ),
+                                ),
+                              ],
+                            ),
+                          ],
+                        ),
                       ),
 
                       const SizedBox(height: 20),
@@ -319,11 +457,17 @@ class Dashboard extends StatelessWidget {
                             ),
                           ),
                           const Spacer(),
-                          Text(
-                            'View all',
-                            style: TextStyle(
-                              color: Colors.teal.shade700,
-                              fontSize: 12,
+
+                          TextButton(
+                            onPressed: () {
+                              Navigator.pushNamed(context, '/transactions');
+                            },
+                            child: Text(
+                              'View all',
+                              style: TextStyle(
+                                color: Colors.teal.shade700,
+                                fontSize: 12,
+                              ),
                             ),
                           ),
                         ],
@@ -342,12 +486,18 @@ class Dashboard extends StatelessWidget {
                         ),
                         title: const Text(
                           'Groceries',
-                          style: TextStyle(fontWeight: FontWeight.bold),
+                          style: TextStyle(
+                            fontWeight: FontWeight.bold,
+                          ),
                         ),
-                        subtitle: const Text("Trader Joe's\nOct 26"),
+                        subtitle: const Text(
+                          "Trader Joe's\nOct 26",
+                        ),
                         trailing: const Text(
                           '\$58.20',
-                          style: TextStyle(fontWeight: FontWeight.bold),
+                          style: TextStyle(
+                            fontWeight: FontWeight.bold,
+                          ),
                         ),
                       ),
 
@@ -362,12 +512,16 @@ class Dashboard extends StatelessWidget {
                         ),
                         title: const Text(
                           'Tuition Fee',
-                          style: TextStyle(fontWeight: FontWeight.bold),
+                          style: TextStyle(
+                            fontWeight: FontWeight.bold,
+                          ),
                         ),
                         subtitle: const Text('Oct 25'),
                         trailing: const Text(
                           '\$1,200',
-                          style: TextStyle(fontWeight: FontWeight.bold),
+                          style: TextStyle(
+                            fontWeight: FontWeight.bold,
+                          ),
                         ),
                       ),
 
@@ -382,12 +536,16 @@ class Dashboard extends StatelessWidget {
                         ),
                         title: const Text(
                           'Rent',
-                          style: TextStyle(fontWeight: FontWeight.bold),
+                          style: TextStyle(
+                            fontWeight: FontWeight.bold,
+                          ),
                         ),
                         subtitle: const Text('Oct 24'),
                         trailing: const Text(
                           '\$750',
-                          style: TextStyle(fontWeight: FontWeight.bold),
+                          style: TextStyle(
+                            fontWeight: FontWeight.bold,
+                          ),
                         ),
                       ),
 
@@ -402,12 +560,18 @@ class Dashboard extends StatelessWidget {
                         ),
                         title: const Text(
                           'Dining',
-                          style: TextStyle(fontWeight: FontWeight.bold),
+                          style: TextStyle(
+                            fontWeight: FontWeight.bold,
+                          ),
                         ),
-                        subtitle: const Text('Cafe\nOct 23'),
+                        subtitle: const Text(
+                          'Cafe\nOct 23',
+                        ),
                         trailing: const Text(
                           '\$24.50',
-                          style: TextStyle(fontWeight: FontWeight.bold),
+                          style: TextStyle(
+                            fontWeight: FontWeight.bold,
+                          ),
                         ),
                       ),
                     ],
@@ -417,18 +581,26 @@ class Dashboard extends StatelessWidget {
             ),
           ),
         ),
-
         bottomNavigationBar: BottomNavigationBar(
           currentIndex: 0,
           selectedItemColor: Colors.teal,
           unselectedItemColor: Colors.grey,
           onTap: (index) {
             if (index == 1) {
-              Navigator.pushNamed(context, '/transactions');
+              Navigator.pushNamed(
+                context,
+                '/transactions',
+              );
             } else if (index == 2) {
-              Navigator.pushNamed(context, '/insights');
+              Navigator.pushNamed(
+                context,
+                '/mybudget',
+              );
             } else if (index == 3) {
-              Navigator.pushNamed(context, '/account');
+              Navigator.pushNamed(
+                context,
+                '/contact_feedback',
+              );
             }
           },
           items: const [
@@ -437,16 +609,22 @@ class Dashboard extends StatelessWidget {
               label: 'Home',
             ),
             BottomNavigationBarItem(
-              icon: Icon(Icons.compare_arrows_rounded),
+              icon: Icon(
+                Icons.compare_arrows_rounded,
+              ),
               label: 'Transactions',
             ),
             BottomNavigationBarItem(
-              icon: Icon(Icons.bar_chart),
-              label: 'Insights',
+              icon: Icon(
+                Icons.account_balance_wallet,
+              ),
+              label: 'Budgets',
             ),
             BottomNavigationBarItem(
-              icon: Icon(Icons.person),
-              label: 'Account',
+              icon: Icon(
+                Icons.support_agent,
+              ),
+              label: 'Contact',
             ),
           ],
         ),
@@ -454,4 +632,3 @@ class Dashboard extends StatelessWidget {
     );
   }
 }
-

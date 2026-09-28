@@ -87,7 +87,6 @@ class Home extends StatelessWidget {
                   ),
                 ),
 
-
                 const SizedBox(height: 12),
 
                 // Login button
@@ -112,6 +111,22 @@ class Home extends StatelessWidget {
                       style: TextStyle(
                         fontWeight: FontWeight.w600,
                       ),
+                    ),
+                  ),
+                ),
+
+                const SizedBox(height: 12),
+
+                TextButton(
+                  onPressed: () {
+                    Navigator.pushNamed(context, '/about');
+                  },
+                  child: const Text(
+                    'About PennyPal',
+                    style: TextStyle(
+                      fontSize: 13,
+                      color: Colors.teal,
+                      fontWeight: FontWeight.w600,
                     ),
                   ),
                 ),
