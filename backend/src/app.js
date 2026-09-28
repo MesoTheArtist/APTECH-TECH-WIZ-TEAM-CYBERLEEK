@@ -8,6 +8,9 @@ const budgetRoutes = require('./routes/budget.routes');
 const savingsRoutes = require('./routes/savings.routes');
 // ... import other routes
 
+// Import middleware
+const { notFound, errorHandler } = require('./middleware/errorHandler.middleware');
+
 const app = express();
 
 // Global Middleware
@@ -24,5 +27,9 @@ app.use('/api/auth', authRoutes);
 app.use('/api/transactions', transactionRoutes);
 app.use('/api/budgets', budgetRoutes);
 app.use('/api/savings', savingsRoutes);
+
+// Error Handling (must be LAST, after all routes)
+app.use(notFound);
+app.use(errorHandler);
 
 module.exports = app;
