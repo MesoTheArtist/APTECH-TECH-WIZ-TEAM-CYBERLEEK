@@ -1,142 +1,20 @@
-// import 'package:flutter/material.dart';
-
-// class Dasboard extends StatelessWidget{
-//   const Dasboard({super.key});
-
-//   @override
-//   Widget build(BuildContext context){
-//     return MaterialApp(
-//       home: Scaffold(
-//         body: Padding(
-//           padding: const EdgeInsets.symmetric(horizontal: 15),
-//           child: Column(
-//             crossAxisAlignment: CrossAxisAlignment.start,
-//             children: [
-//               Row(
-//                 children: [
-//                   Expanded(
-//                     flex: 1,
-//                     child: Text(
-//                       'PennyPal'
-//                     ),
-//                   ),
-
-//                   const Spacer(),
-
-//                   Expanded(
-//                     flex: 2,
-//                     child: Text(
-//                       'Profile'
-//                     ),
-//                   )
-//                 ],
-//               ),
-
-//               SizedBox(height: 10,),
-
-//               Text(
-//                 'Dashboard',
-
-//                 style: TextStyle(
-//                   fontWeight: FontWeight.w800,
-//                   fontSize: 30
-//                 ),
-//               ),
-
-//               SizedBox(height: 20,),
-
-//               Card(
-//                 color: Colors.green,
-//                 elevation: 4,
-//                 child: Center(
-//                   child: Padding(
-//                     padding: EdgeInsets.all(16.0),
-//                     child: Column(
-//                       crossAxisAlignment: CrossAxisAlignment.start,
-//                       children: [
-//                         Container(
-//                           width: double.infinity,
-//                           child: Text(
-//                             'Total Balance',
-//                             textAlign: TextAlign.left,
-//                             style: TextStyle(
-//                               color: Colors.white
-//                             ),
-//                           ),
-//                         ),
-
-//                         Container(
-//                           width: double.infinity,
-//                           child: Text(
-//                             'N750,000.75',
-//                             style: TextStyle(
-//                               color: Colors.white,
-//                               fontWeight: FontWeight.w700,
-//                               fontSize: 40
-//                             ),
-//                           ),
-//                         ),
-
-//                         Container(
-//                           width: double.infinity,
-//                           child: Text(
-//                             'Updated: Oct 26',
-//                             style: TextStyle(
-//                               color: Colors.white
-//                             ),
-//                           ),
-//                         )
-//                       ],
-//                     )
-//                   ),
-//                 ),
-//               ),
-
-//               SizedBox(height: 20,),
-
-//               Text(
-//                 'Monthly Budget Progress'
-//               ),
-//               // ========== progress bar ==========
-//               Text(
-//                 'Budget Status: 60% Spent (N100,000/N500,000)'
-//               ),
-
-//               SizedBox(height: 10,),
-
-//               Text(
-//                 'Groceries'
-//               )
-//             ],
-//           ),
-//         )
-//       )
-//     );
-//   }
-// }
-
-
 import 'package:flutter/material.dart';
+import '../components/navbar.dart';
 
-class Dasboard extends StatelessWidget {
-  const Dasboard({super.key});
+class Dashboard extends StatelessWidget {
+  const Dashboard({super.key});
 
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
-
       home: Scaffold(
         backgroundColor: Colors.white,
-
-        // ================= BODY =================
         body: SafeArea(
           child: SingleChildScrollView(
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
-
-                // ================= TOP BAR =================
                 Container(
                   width: double.infinity,
                   padding: const EdgeInsets.symmetric(
@@ -144,10 +22,8 @@ class Dasboard extends StatelessWidget {
                     vertical: 12,
                   ),
                   color: Colors.teal.shade900,
-
                   child: Row(
                     children: [
-
                       const Text(
                         'PennyPal',
                         style: TextStyle(
@@ -156,9 +32,7 @@ class Dasboard extends StatelessWidget {
                           fontWeight: FontWeight.bold,
                         ),
                       ),
-
                       const Spacer(),
-
                       const CircleAvatar(
                         radius: 17,
                         backgroundColor: Colors.white,
@@ -167,9 +41,7 @@ class Dasboard extends StatelessWidget {
                           color: Colors.teal,
                         ),
                       ),
-
                       const SizedBox(width: 8),
-
                       const Text(
                         'Sarah J.',
                         style: TextStyle(
@@ -181,15 +53,11 @@ class Dasboard extends StatelessWidget {
                   ),
                 ),
 
-                // ================= MAIN CONTENT =================
                 Padding(
                   padding: const EdgeInsets.all(15),
-
                   child: Column(
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
-
-                      // Dashboard title
                       const Text(
                         'Dashboard',
                         style: TextStyle(
@@ -200,20 +68,16 @@ class Dasboard extends StatelessWidget {
 
                       const SizedBox(height: 15),
 
-                      // ================= BALANCE CARD =================
                       Container(
                         width: double.infinity,
                         padding: const EdgeInsets.all(16),
-
                         decoration: BoxDecoration(
                           color: Colors.teal.shade800,
                           borderRadius: BorderRadius.circular(15),
                         ),
-
                         child: Column(
                           crossAxisAlignment: CrossAxisAlignment.start,
                           children: [
-
                             const Text(
                               'Total Balance',
                               style: TextStyle(
@@ -221,12 +85,9 @@ class Dasboard extends StatelessWidget {
                                 fontSize: 14,
                               ),
                             ),
-
                             const SizedBox(height: 5),
-
                             Row(
                               children: [
-
                                 const Text(
                                   '\$2,450.75',
                                   style: TextStyle(
@@ -235,19 +96,15 @@ class Dasboard extends StatelessWidget {
                                     fontWeight: FontWeight.bold,
                                   ),
                                 ),
-
                                 const SizedBox(width: 5),
-
                                 Icon(
                                   Icons.arrow_upward,
                                   size: 28,
                                   color: Colors.yellow.shade400,
-                                )
+                                ),
                               ],
                             ),
-
                             const SizedBox(height: 5),
-
                             const Text(
                               'Updated: Oct 26',
                               style: TextStyle(
@@ -261,7 +118,6 @@ class Dasboard extends StatelessWidget {
 
                       const SizedBox(height: 20),
 
-                      // ================= BUDGET =================
                       const Text(
                         'Monthly Budget Progress',
                         style: TextStyle(
@@ -269,19 +125,13 @@ class Dasboard extends StatelessWidget {
                           fontWeight: FontWeight.bold,
                         ),
                       ),
-
                       const SizedBox(height: 8),
-
                       const Text(
                         'Budget Status: 68% Spent (\$1,020 / \$1,500)',
-                        style: TextStyle(
-                          fontSize: 12,
-                        ),
+                        style: TextStyle(fontSize: 12),
                       ),
-
                       const SizedBox(height: 7),
 
-                      // Main progress bar
                       LinearProgressIndicator(
                         value: 0.68,
                         minHeight: 8,
@@ -292,11 +142,8 @@ class Dasboard extends StatelessWidget {
 
                       const SizedBox(height: 15),
 
-                      // ================= CATEGORIES =================
                       Row(
                         children: [
-
-                          // Groceries
                           Expanded(
                             child: Column(
                               crossAxisAlignment: CrossAxisAlignment.start,
@@ -305,9 +152,7 @@ class Dasboard extends StatelessWidget {
                                   'Groceries',
                                   style: TextStyle(fontSize: 12),
                                 ),
-
                                 const SizedBox(height: 5),
-
                                 LinearProgressIndicator(
                                   value: 0.52,
                                   minHeight: 6,
@@ -315,9 +160,7 @@ class Dasboard extends StatelessWidget {
                                   backgroundColor: Colors.grey.shade300,
                                   color: Colors.teal,
                                 ),
-
                                 const SizedBox(height: 3),
-
                                 const Text(
                                   '\$320 / \$450',
                                   style: TextStyle(fontSize: 10),
@@ -325,10 +168,7 @@ class Dasboard extends StatelessWidget {
                               ],
                             ),
                           ),
-
                           const SizedBox(width: 15),
-
-                          // Dining
                           Expanded(
                             child: Column(
                               crossAxisAlignment: CrossAxisAlignment.start,
@@ -337,9 +177,7 @@ class Dasboard extends StatelessWidget {
                                   'Dining',
                                   style: TextStyle(fontSize: 12),
                                 ),
-
                                 const SizedBox(height: 5),
-
                                 LinearProgressIndicator(
                                   value: 0.75,
                                   minHeight: 6,
@@ -347,9 +185,7 @@ class Dasboard extends StatelessWidget {
                                   backgroundColor: Colors.grey.shade300,
                                   color: Colors.amber,
                                 ),
-
                                 const SizedBox(height: 3),
-
                                 const Text(
                                   '\$240 / \$300',
                                   style: TextStyle(fontSize: 10),
@@ -364,8 +200,6 @@ class Dasboard extends StatelessWidget {
 
                       Row(
                         children: [
-
-                          // Transport
                           Expanded(
                             child: Column(
                               crossAxisAlignment: CrossAxisAlignment.start,
@@ -374,9 +208,7 @@ class Dasboard extends StatelessWidget {
                                   'Transport',
                                   style: TextStyle(fontSize: 12),
                                 ),
-
                                 const SizedBox(height: 5),
-
                                 LinearProgressIndicator(
                                   value: 0.72,
                                   minHeight: 6,
@@ -384,9 +216,7 @@ class Dasboard extends StatelessWidget {
                                   backgroundColor: Colors.grey.shade300,
                                   color: Colors.teal,
                                 ),
-
                                 const SizedBox(height: 3),
-
                                 const Text(
                                   '\$180 / \$250',
                                   style: TextStyle(fontSize: 10),
@@ -394,10 +224,7 @@ class Dasboard extends StatelessWidget {
                               ],
                             ),
                           ),
-
                           const SizedBox(width: 15),
-
-                          // Books
                           Expanded(
                             child: Column(
                               crossAxisAlignment: CrossAxisAlignment.start,
@@ -406,9 +233,7 @@ class Dasboard extends StatelessWidget {
                                   'Books',
                                   style: TextStyle(fontSize: 12),
                                 ),
-
                                 const SizedBox(height: 5),
-
                                 LinearProgressIndicator(
                                   value: 0.75,
                                   minHeight: 6,
@@ -416,9 +241,7 @@ class Dasboard extends StatelessWidget {
                                   backgroundColor: Colors.grey.shade300,
                                   color: Colors.amber,
                                 ),
-
                                 const SizedBox(height: 3),
-
                                 const Text(
                                   '\$150 / \$200',
                                   style: TextStyle(fontSize: 10),
@@ -431,7 +254,6 @@ class Dasboard extends StatelessWidget {
 
                       const SizedBox(height: 20),
 
-                      // ================= QUICK ACTIONS =================
                       const Text(
                         'Quick Actions',
                         style: TextStyle(
@@ -439,12 +261,10 @@ class Dasboard extends StatelessWidget {
                           fontWeight: FontWeight.bold,
                         ),
                       ),
-
                       const SizedBox(height: 10),
 
                       Row(
                         children: [
-
                           Expanded(
                             child: ElevatedButton.icon(
                               onPressed: () {},
@@ -454,9 +274,7 @@ class Dasboard extends StatelessWidget {
                               ),
                               label: const Text(
                                 'Add Expense',
-                                style: TextStyle(
-                                  color: Colors.black,
-                                ),
+                                style: TextStyle(color: Colors.black),
                               ),
                               style: ElevatedButton.styleFrom(
                                 backgroundColor: Colors.amber,
@@ -466,9 +284,7 @@ class Dasboard extends StatelessWidget {
                               ),
                             ),
                           ),
-
                           const SizedBox(width: 10),
-
                           Expanded(
                             child: ElevatedButton.icon(
                               onPressed: () {},
@@ -478,9 +294,7 @@ class Dasboard extends StatelessWidget {
                               ),
                               label: const Text(
                                 'Add Income',
-                                style: TextStyle(
-                                  color: Colors.black,
-                                ),
+                                style: TextStyle(color: Colors.black),
                               ),
                               style: ElevatedButton.styleFrom(
                                 backgroundColor: Colors.amber,
@@ -495,10 +309,8 @@ class Dasboard extends StatelessWidget {
 
                       const SizedBox(height: 20),
 
-                      // ================= RECENT TRANSACTIONS =================
                       Row(
                         children: [
-
                           const Text(
                             'Recent Transactions',
                             style: TextStyle(
@@ -506,9 +318,7 @@ class Dasboard extends StatelessWidget {
                               fontWeight: FontWeight.bold,
                             ),
                           ),
-
                           const Spacer(),
-
                           Text(
                             'View all',
                             style: TextStyle(
@@ -521,10 +331,8 @@ class Dasboard extends StatelessWidget {
 
                       const SizedBox(height: 10),
 
-                      // Transaction 1
                       ListTile(
                         contentPadding: EdgeInsets.zero,
-
                         leading: CircleAvatar(
                           backgroundColor: Colors.teal.shade100,
                           child: const Icon(
@@ -532,30 +340,19 @@ class Dasboard extends StatelessWidget {
                             color: Colors.teal,
                           ),
                         ),
-
                         title: const Text(
                           'Groceries',
-                          style: TextStyle(
-                            fontWeight: FontWeight.bold,
-                          ),
+                          style: TextStyle(fontWeight: FontWeight.bold),
                         ),
-
-                        subtitle: const Text(
-                          "Trader Joe's\nOct 26",
-                        ),
-
+                        subtitle: const Text("Trader Joe's\nOct 26"),
                         trailing: const Text(
                           '\$58.20',
-                          style: TextStyle(
-                            fontWeight: FontWeight.bold,
-                          ),
+                          style: TextStyle(fontWeight: FontWeight.bold),
                         ),
                       ),
 
-                      // Transaction 2
                       ListTile(
                         contentPadding: EdgeInsets.zero,
-
                         leading: CircleAvatar(
                           backgroundColor: Colors.amber.shade100,
                           child: const Icon(
@@ -563,30 +360,19 @@ class Dasboard extends StatelessWidget {
                             color: Colors.amber,
                           ),
                         ),
-
                         title: const Text(
                           'Tuition Fee',
-                          style: TextStyle(
-                            fontWeight: FontWeight.bold,
-                          ),
+                          style: TextStyle(fontWeight: FontWeight.bold),
                         ),
-
-                        subtitle: const Text(
-                          'Oct 25',
-                        ),
-
+                        subtitle: const Text('Oct 25'),
                         trailing: const Text(
-                          '\$1200',
-                          style: TextStyle(
-                            fontWeight: FontWeight.bold,
-                          ),
+                          '\$1,200',
+                          style: TextStyle(fontWeight: FontWeight.bold),
                         ),
                       ),
 
-                      // Transaction 3
                       ListTile(
                         contentPadding: EdgeInsets.zero,
-
                         leading: CircleAvatar(
                           backgroundColor: Colors.teal.shade100,
                           child: const Icon(
@@ -594,30 +380,19 @@ class Dasboard extends StatelessWidget {
                             color: Colors.teal,
                           ),
                         ),
-
                         title: const Text(
                           'Rent',
-                          style: TextStyle(
-                            fontWeight: FontWeight.bold,
-                          ),
+                          style: TextStyle(fontWeight: FontWeight.bold),
                         ),
-
-                        subtitle: const Text(
-                          'Oct 24',
-                        ),
-
+                        subtitle: const Text('Oct 24'),
                         trailing: const Text(
                           '\$750',
-                          style: TextStyle(
-                            fontWeight: FontWeight.bold,
-                          ),
+                          style: TextStyle(fontWeight: FontWeight.bold),
                         ),
                       ),
 
-                      // Transaction 4
                       ListTile(
                         contentPadding: EdgeInsets.zero,
-
                         leading: CircleAvatar(
                           backgroundColor: Colors.amber.shade100,
                           child: const Icon(
@@ -625,23 +400,14 @@ class Dasboard extends StatelessWidget {
                             color: Colors.amber,
                           ),
                         ),
-
                         title: const Text(
                           'Dining',
-                          style: TextStyle(
-                            fontWeight: FontWeight.bold,
-                          ),
+                          style: TextStyle(fontWeight: FontWeight.bold),
                         ),
-
-                        subtitle: const Text(
-                          'Cafe\nOct 23',
-                        ),
-
+                        subtitle: const Text('Cafe\nOct 23'),
                         trailing: const Text(
                           '\$24.50',
-                          style: TextStyle(
-                            fontWeight: FontWeight.bold,
-                          ),
+                          style: TextStyle(fontWeight: FontWeight.bold),
                         ),
                       ),
                     ],
@@ -652,30 +418,32 @@ class Dasboard extends StatelessWidget {
           ),
         ),
 
-        // ================= BOTTOM NAVIGATION =================
         bottomNavigationBar: BottomNavigationBar(
           currentIndex: 0,
-
           selectedItemColor: Colors.teal,
           unselectedItemColor: Colors.grey,
-
+          onTap: (index) {
+            if (index == 1) {
+              Navigator.pushNamed(context, '/transactions');
+            } else if (index == 2) {
+              Navigator.pushNamed(context, '/insights');
+            } else if (index == 3) {
+              Navigator.pushNamed(context, '/account');
+            }
+          },
           items: const [
-
             BottomNavigationBarItem(
               icon: Icon(Icons.home),
               label: 'Home',
             ),
-
             BottomNavigationBarItem(
-              icon: Icon(Icons.pie_chart),
-              label: 'Budget',
+              icon: Icon(Icons.compare_arrows_rounded),
+              label: 'Transactions',
             ),
-
             BottomNavigationBarItem(
               icon: Icon(Icons.bar_chart),
               label: 'Insights',
             ),
-
             BottomNavigationBarItem(
               icon: Icon(Icons.person),
               label: 'Account',
@@ -686,3 +454,4 @@ class Dasboard extends StatelessWidget {
     );
   }
 }
+

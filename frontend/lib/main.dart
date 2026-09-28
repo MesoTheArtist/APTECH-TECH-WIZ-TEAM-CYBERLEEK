@@ -4,6 +4,7 @@ import './pages/home.dart';
 import './pages/register.dart';
 import './pages/login.dart';
 import './pages/dasboard.dart';
+import './pages/transaction.dart';
 
 void main(){
   runApp( const MyApp());
@@ -24,7 +25,8 @@ class MyApp extends StatelessWidget{
         // '/register' : (context) => Register(),
         // '/login' : (context) => Login()
 
-        '/' : (context) => Dasboard()
+        '/' : (context) => Dashboard(),
+        '/transactions' : (context) => Transactions()
       },
     );
   }
