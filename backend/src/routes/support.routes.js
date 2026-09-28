@@ -1,14 +1,6 @@
-const express = require('express');
+﻿const express = require('express');
 const router = express.Router();
-const { protect, authorize } = require('../middleware/auth.middleware');
-const { createTicket, getMyTickets, getAllTickets, replyTicket } = require('../controllers/support.controller');
-
-router.use(protect);
-router.post('/', createTicket);
-router.get('/my', getMyTickets);
-
-// Admin only
-router.get('/all', authorize('admin'), getAllTickets);
-router.patch('/:id/reply', authorize('admin'), replyTicket);
-
+const { protect } = require('../middleware/auth.middleware');
+const { authorize } = require('../middleware/roleCheck.middleware');
+router.get('/all', protect, authorize('admin'), (req, res) => res.json({ message: 'Support OK' }));
 module.exports = router;
