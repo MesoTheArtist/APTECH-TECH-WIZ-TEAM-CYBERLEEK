@@ -23,6 +23,25 @@ class Dashboard extends StatelessWidget {
                   color: Colors.teal.shade900,
                   child: Row(
                     children: [
+                      Container(
+                        width: 38,
+                        height: 38,
+                        decoration: BoxDecoration(
+                          color: Colors.yellow,
+                          borderRadius: BorderRadius.circular(10)
+                        ),
+                        child: const Center(
+                          child: Text('P',
+                            style: TextStyle(
+                              fontWeight: FontWeight.bold, 
+                              fontSize: 22
+                            )
+                          )
+                        )
+                      ),
+
+                      const SizedBox(width: 8),
+
                       const Text(
                         'PennyPal',
                         style: TextStyle(

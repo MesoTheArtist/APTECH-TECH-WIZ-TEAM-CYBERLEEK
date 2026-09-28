@@ -224,302 +224,402 @@ class _MyBudgetsState extends State<MyBudgets> {
     return Scaffold(
       backgroundColor: const Color(0xFFF5F9F8),
       body: SafeArea(
-        child: budgets.isEmpty
-            ? SingleChildScrollView(
-                padding: const EdgeInsets.all(20),
-                child: Column(
-                  crossAxisAlignment: CrossAxisAlignment.start,
-                  children: [
-                    const Text(
-                      'My Budgets',
-                      style: TextStyle(
-                        fontSize: 28,
-                        fontWeight: FontWeight.bold,
-                        color: Color(0xFF172033),
-                      ),
-                    ),
-                    const SizedBox(height: 6),
-                    const Text(
-                      'Track your monthly spending and stay within your limits.',
-                      style: TextStyle(
-                        fontSize: 15,
-                        color: Colors.blueGrey,
-                      ),
-                    ),
-                    const SizedBox(height: 25),
-                    Center(
-                      child: Column(
-                        mainAxisSize: MainAxisSize.min,
-                        children: [
-                          const Icon(
-                            Icons.account_balance_wallet_outlined,
-                            size: 55,
-                            color: Colors.teal,
-                          ),
-                          const SizedBox(height: 12),
-                          const Text(
-                            'No budgets yet',
-                            style: TextStyle(
-                              fontSize: 20,
-                              fontWeight: FontWeight.bold,
-                            ),
-                          ),
-                          const SizedBox(height: 6),
-                          const Text(
-                            'Create a budget to start tracking your spending.',
-                            textAlign: TextAlign.center,
-                          ),
-                          const SizedBox(height: 18),
-                          ElevatedButton(
-                            onPressed: showBudgetForm,
-                            style: ElevatedButton.styleFrom(
-                              backgroundColor: Colors.teal,
-                              foregroundColor: Colors.white,
-                              elevation: 0,
-                              padding: const EdgeInsets.symmetric(
-                                horizontal: 22,
-                                vertical: 13,
-                              ),
-                              shape: RoundedRectangleBorder(
-                                borderRadius:
-                                    BorderRadius.circular(10),
-                              ),
-                            ),
-                            child: const Text(
-                              'Create Budget',
-                            ),
-                          ),
-                        ],
-                      ),
-                    ),
-                  ],
-                ),
-              )
-            : ListView(
-                padding: const EdgeInsets.all(20),
+        child: Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: [
+            Container(
+              width: double.infinity,
+              padding: const EdgeInsets.symmetric(
+                horizontal: 15,
+                vertical: 12,
+              ),
+              color: Colors.teal.shade900,
+              child: Row(
                 children: [
-                  Row(
-                    crossAxisAlignment: CrossAxisAlignment.start,
-                    children: [
-                      Expanded(
-                        child: Column(
-                          crossAxisAlignment:
-                              CrossAxisAlignment.start,
-                          children: [
-                            const Text(
-                              'My Budgets',
-                              style: TextStyle(
-                                fontSize: 28,
-                                fontWeight: FontWeight.bold,
-                                color: Color(0xFF172033),
-                              ),
-                            ),
-                            const SizedBox(height: 6),
-                            const Text(
-                              'Track your monthly spending and stay within your limits.',
-                              style: TextStyle(
-                                fontSize: 15,
-                                color: Colors.blueGrey,
-                              ),
-                            ),
-                          ],
+                  Container(
+                    width: 38,
+                    height: 38,
+                    decoration: BoxDecoration(
+                      color: Colors.yellow,
+                      borderRadius: BorderRadius.circular(10),
+                    ),
+                    child: const Center(
+                      child: Text(
+                        'P',
+                        style: TextStyle(
+                          fontWeight: FontWeight.bold,
+                          fontSize: 22,
                         ),
                       ),
-                      const SizedBox(width: 15),
-                      ElevatedButton.icon(
-                        onPressed: showBudgetForm,
-                        icon: const Icon(Icons.add),
-                        label: const Text('Create Budget'),
-                        style: ElevatedButton.styleFrom(
-                          backgroundColor: Colors.teal,
-                          foregroundColor: Colors.white,
-                          elevation: 0,
-                          padding: const EdgeInsets.symmetric(
-                            horizontal: 16,
-                            vertical: 13,
-                          ),
-                          shape: RoundedRectangleBorder(
-                            borderRadius: BorderRadius.circular(10),
-                          ),
-                        ),
-                      ),
-                    ],
+                    ),
                   ),
-                  const SizedBox(height: 25),
-                  ...budgets.asMap().entries.map((entry) {
-                    final index = entry.key;
-                    final item = entry.value;
 
-                    final budget = item['budget'] as double;
-                    final spent = item['spent'] as double;
+                  const SizedBox(width: 8),
 
-                    final remaining = budget - spent;
-                    final isOverBudget = remaining < 0;
+                  const Text(
+                    'PennyPal',
+                    style: TextStyle(
+                      color: Colors.white,
+                      fontSize: 20,
+                      fontWeight: FontWeight.bold,
+                    ),
+                  ),
 
-                    final progress = budget == 0
-                        ? 0.0
-                        : (spent / budget).clamp(0.0, 1.0);
+                  const Spacer(),
 
-                    return Container(
-                      margin: const EdgeInsets.only(bottom: 18),
-                      padding: const EdgeInsets.all(18),
-                      decoration: BoxDecoration(
-                        color: Colors.white,
-                        borderRadius: BorderRadius.circular(14),
-                        boxShadow: const [
-                          BoxShadow(
-                            color: Colors.black12,
-                            blurRadius: 5,
-                            offset: Offset(0, 2),
+                  const CircleAvatar(
+                    radius: 17,
+                    backgroundColor: Colors.white,
+                    child: Icon(
+                      Icons.person,
+                      color: Colors.teal,
+                    ),
+                  ),
+
+                  const SizedBox(width: 8),
+
+                  const Text(
+                    'Sarah J.',
+                    style: TextStyle(
+                      color: Colors.white,
+                      fontSize: 14,
+                    ),
+                  ),
+                ],
+              ),
+            ),
+
+            Expanded(
+              child: budgets.isEmpty
+                  ? SingleChildScrollView(
+                      padding: const EdgeInsets.all(20),
+                      child: Column(
+                        crossAxisAlignment: CrossAxisAlignment.start,
+                        children: [
+                          const Text(
+                            'My Budgets',
+                            style: TextStyle(
+                              fontSize: 28,
+                              fontWeight: FontWeight.bold,
+                              color: Color(0xFF172033),
+                            ),
+                          ),
+
+                          const SizedBox(height: 6),
+
+                          const Text(
+                            'Track your monthly spending and stay within your limits.',
+                            style: TextStyle(
+                              fontSize: 15,
+                              color: Colors.blueGrey,
+                            ),
+                          ),
+
+                          const SizedBox(height: 25),
+
+                          Center(
+                            child: Column(
+                              mainAxisSize: MainAxisSize.min,
+                              children: [
+                                const Icon(
+                                  Icons.account_balance_wallet_outlined,
+                                  size: 55,
+                                  color: Colors.teal,
+                                ),
+
+                                const SizedBox(height: 12),
+
+                                const Text(
+                                  'No budgets yet',
+                                  style: TextStyle(
+                                    fontSize: 20,
+                                    fontWeight: FontWeight.bold,
+                                  ),
+                                ),
+
+                                const SizedBox(height: 6),
+
+                                const Text(
+                                  'Create a budget to start tracking your spending.',
+                                  textAlign: TextAlign.center,
+                                ),
+
+                                const SizedBox(height: 18),
+
+                                ElevatedButton(
+                                  onPressed: showBudgetForm,
+                                  style: ElevatedButton.styleFrom(
+                                    backgroundColor: Colors.teal,
+                                    foregroundColor: Colors.white,
+                                    elevation: 0,
+                                    padding: const EdgeInsets.symmetric(
+                                      horizontal: 22,
+                                      vertical: 13,
+                                    ),
+                                    shape: RoundedRectangleBorder(
+                                      borderRadius:
+                                          BorderRadius.circular(10),
+                                    ),
+                                  ),
+                                  child: const Text(
+                                    'Create Budget',
+                                  ),
+                                ),
+                              ],
+                            ),
                           ),
                         ],
                       ),
-                      child: Column(
-                        crossAxisAlignment:
-                            CrossAxisAlignment.start,
-                        children: [
-                          Row(
-                            crossAxisAlignment:
-                                CrossAxisAlignment.start,
-                            children: [
-                              Expanded(
-                                child: Column(
-                                  crossAxisAlignment:
-                                      CrossAxisAlignment.start,
-                                  children: [
-                                    Text(
-                                      item['name'],
-                                      style: const TextStyle(
-                                        fontSize: 18,
-                                        fontWeight: FontWeight.bold,
-                                      ),
-                                    ),
-                                    const SizedBox(height: 4),
-                                    Text(
-                                      item['month'],
-                                      style: const TextStyle(
-                                        color: Colors.blueGrey,
-                                      ),
-                                    ),
-                                  ],
-                                ),
-                              ),
-                              PopupMenuButton<String>(
-                                onSelected: (value) {
-                                  if (value == 'edit') {
-                                    showBudgetForm(
-                                      index: index,
-                                    );
-                                  } else {
-                                    deleteBudget(index);
-                                  }
-                                },
-                                itemBuilder: (context) => const [
-                                  PopupMenuItem(
-                                    value: 'edit',
-                                    child: Text('Edit'),
-                                  ),
-                                  PopupMenuItem(
-                                    value: 'delete',
-                                    child: Text('Delete'),
-                                  ),
-                                ],
-                              ),
-                            ],
-                          ),
-                          const SizedBox(height: 18),
-                          Row(
-                            mainAxisAlignment:
-                                MainAxisAlignment.spaceBetween,
-                            children: [
-                              Column(
+                    )
+                  : ListView(
+                      padding: const EdgeInsets.all(20),
+                      children: [
+                        Row(
+                          crossAxisAlignment: CrossAxisAlignment.start,
+                          children: [
+                            Expanded(
+                              child: Column(
                                 crossAxisAlignment:
                                     CrossAxisAlignment.start,
                                 children: [
                                   const Text(
-                                    'Budget',
+                                    'My Budgets',
                                     style: TextStyle(
-                                      color: Colors.blueGrey,
-                                    ),
-                                  ),
-                                  const SizedBox(height: 4),
-                                  Text(
-                                    '₦${budget.toStringAsFixed(0)}',
-                                    style: const TextStyle(
-                                      fontSize: 19,
+                                      fontSize: 28,
                                       fontWeight: FontWeight.bold,
+                                      color: Color(0xFF172033),
                                     ),
                                   ),
-                                ],
-                              ),
-                              Column(
-                                crossAxisAlignment:
-                                    CrossAxisAlignment.end,
-                                children: [
+
+                                  const SizedBox(height: 6),
+
                                   const Text(
-                                    'Spent',
+                                    'Track your monthly spending and stay within your limits.',
                                     style: TextStyle(
+                                      fontSize: 15,
                                       color: Colors.blueGrey,
-                                    ),
-                                  ),
-                                  const SizedBox(height: 4),
-                                  Text(
-                                    '₦${spent.toStringAsFixed(0)}',
-                                    style: const TextStyle(
-                                      fontSize: 19,
-                                      fontWeight: FontWeight.bold,
                                     ),
                                   ),
                                 ],
                               ),
-                            ],
-                          ),
-                          const SizedBox(height: 18),
-                          ClipRRect(
-                            borderRadius:
-                                BorderRadius.circular(10),
-                            child: LinearProgressIndicator(
-                              value: progress,
-                              minHeight: 9,
-                              backgroundColor:
-                                  Colors.teal.shade50,
-                              valueColor:
-                                  AlwaysStoppedAnimation<Color>(
-                                isOverBudget
-                                    ? Colors.red
-                                    : Colors.teal,
+                            ),
+
+                            const SizedBox(width: 15),
+
+                            ElevatedButton.icon(
+                              onPressed: showBudgetForm,
+                              icon: const Icon(Icons.add),
+                              label: const Text('Create Budget'),
+                              style: ElevatedButton.styleFrom(
+                                backgroundColor: Colors.teal,
+                                foregroundColor: Colors.white,
+                                elevation: 0,
+                                padding: const EdgeInsets.symmetric(
+                                  horizontal: 16,
+                                  vertical: 13,
+                                ),
+                                shape: RoundedRectangleBorder(
+                                  borderRadius:
+                                      BorderRadius.circular(10),
+                                ),
                               ),
                             ),
-                          ),
-                          const SizedBox(height: 15),
-                          Container(
-                            width: double.infinity,
-                            padding: const EdgeInsets.all(12),
+                          ],
+                        ),
+
+                        const SizedBox(height: 25),
+
+                        ...budgets.asMap().entries.map((entry) {
+                          final index = entry.key;
+                          final item = entry.value;
+
+                          final budget = item['budget'] as double;
+                          final spent = item['spent'] as double;
+
+                          final remaining = budget - spent;
+                          final isOverBudget = remaining < 0;
+
+                          final progress = budget == 0
+                              ? 0.0
+                              : (spent / budget).clamp(0.0, 1.0);
+
+                          return Container(
+                            margin: const EdgeInsets.only(bottom: 18),
+                            padding: const EdgeInsets.all(18),
                             decoration: BoxDecoration(
-                              color: isOverBudget
-                                  ? Colors.red.shade50
-                                  : Colors.teal.shade50,
-                              borderRadius:
-                                  BorderRadius.circular(10),
+                              color: Colors.white,
+                              borderRadius: BorderRadius.circular(14),
+                              boxShadow: const [
+                                BoxShadow(
+                                  color: Colors.black12,
+                                  blurRadius: 5,
+                                  offset: Offset(0, 2),
+                                ),
+                              ],
                             ),
-                            child: Text(
-                              isOverBudget
-                                  ? 'Overspent by ₦${remaining.abs().toStringAsFixed(0)}'
-                                  : 'Remaining: ₦${remaining.toStringAsFixed(0)}',
-                              style: TextStyle(
-                                fontWeight: FontWeight.w600,
-                                color: isOverBudget
-                                    ? Colors.red.shade700
-                                    : Colors.teal.shade700,
-                              ),
+                            child: Column(
+                              crossAxisAlignment:
+                                  CrossAxisAlignment.start,
+                              children: [
+                                Row(
+                                  crossAxisAlignment:
+                                      CrossAxisAlignment.start,
+                                  children: [
+                                    Expanded(
+                                      child: Column(
+                                        crossAxisAlignment:
+                                            CrossAxisAlignment.start,
+                                        children: [
+                                          Text(
+                                            item['name'],
+                                            style: const TextStyle(
+                                              fontSize: 18,
+                                              fontWeight: FontWeight.bold,
+                                            ),
+                                          ),
+
+                                          const SizedBox(height: 4),
+
+                                          Text(
+                                            item['month'],
+                                            style: const TextStyle(
+                                              color: Colors.blueGrey,
+                                            ),
+                                          ),
+                                        ],
+                                      ),
+                                    ),
+
+                                    PopupMenuButton<String>(
+                                      onSelected: (value) {
+                                        if (value == 'edit') {
+                                          showBudgetForm(
+                                            index: index,
+                                          );
+                                        } else {
+                                          deleteBudget(index);
+                                        }
+                                      },
+                                      itemBuilder: (context) => const [
+                                        PopupMenuItem(
+                                          value: 'edit',
+                                          child: Text('Edit'),
+                                        ),
+                                        PopupMenuItem(
+                                          value: 'delete',
+                                          child: Text('Delete'),
+                                        ),
+                                      ],
+                                    ),
+                                  ],
+                                ),
+
+                                const SizedBox(height: 18),
+
+                                Row(
+                                  mainAxisAlignment:
+                                      MainAxisAlignment.spaceBetween,
+                                  children: [
+                                    Column(
+                                      crossAxisAlignment:
+                                          CrossAxisAlignment.start,
+                                      children: [
+                                        const Text(
+                                          'Budget',
+                                          style: TextStyle(
+                                            color: Colors.blueGrey,
+                                          ),
+                                        ),
+
+                                        const SizedBox(height: 4),
+
+                                        Text(
+                                          '₦${budget.toStringAsFixed(0)}',
+                                          style: const TextStyle(
+                                            fontSize: 19,
+                                            fontWeight: FontWeight.bold,
+                                          ),
+                                        ),
+                                      ],
+                                    ),
+
+                                    Column(
+                                      crossAxisAlignment:
+                                          CrossAxisAlignment.end,
+                                      children: [
+                                        const Text(
+                                          'Spent',
+                                          style: TextStyle(
+                                            color: Colors.blueGrey,
+                                          ),
+                                        ),
+
+                                        const SizedBox(height: 4),
+
+                                        Text(
+                                          '₦${spent.toStringAsFixed(0)}',
+                                          style: const TextStyle(
+                                            fontSize: 19,
+                                            fontWeight: FontWeight.bold,
+                                          ),
+                                        ),
+                                      ],
+                                    ),
+                                  ],
+                                ),
+
+                                const SizedBox(height: 18),
+
+                                ClipRRect(
+                                  borderRadius:
+                                      BorderRadius.circular(10),
+                                  child: LinearProgressIndicator(
+                                    value: progress,
+                                    minHeight: 9,
+                                    backgroundColor:
+                                        Colors.teal.shade50,
+                                    valueColor:
+                                        AlwaysStoppedAnimation<Color>(
+                                      isOverBudget
+                                          ? Colors.red
+                                          : Colors.teal,
+                                    ),
+                                  ),
+                                ),
+
+                                const SizedBox(height: 15),
+
+                                Container(
+                                  width: double.infinity,
+                                  padding: const EdgeInsets.all(12),
+                                  decoration: BoxDecoration(
+                                    color: isOverBudget
+                                        ? Colors.red.shade50
+                                        : Colors.teal.shade50,
+                                    borderRadius:
+                                        BorderRadius.circular(10),
+                                  ),
+                                  child: Text(
+                                    isOverBudget
+                                        ? 'Overspent by ₦${remaining.abs().toStringAsFixed(0)}'
+                                        : 'Remaining: ₦${remaining.toStringAsFixed(0)}',
+                                    style: TextStyle(
+                                      fontWeight: FontWeight.w600,
+                                      color: isOverBudget
+                                          ? Colors.red.shade700
+                                          : Colors.teal.shade700,
+                                    ),
+                                  ),
+                                ),
+                              ],
                             ),
-                          ),
-                        ],
-                      ),
-                    );
-                  }),
-                ],
-              ),
+                          );
+                        }),
+                      ],
+                    ),
+            ),
+          ],
+        ),
       ),
 
       bottomNavigationBar: BottomNavigationBar(
@@ -528,7 +628,7 @@ class _MyBudgetsState extends State<MyBudgets> {
           unselectedItemColor: Colors.grey,
           onTap: (index) {
             if (index == 0) {
-              Navigator.pushNamed(context, '/');
+              Navigator.pushNamed(context, '/dashboard_home');
             } else if (index == 1) {
               Navigator.pushNamed(context, '/transactions');
             } else if (index == 3) {

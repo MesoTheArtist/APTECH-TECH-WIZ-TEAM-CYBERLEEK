@@ -1,7 +1,11 @@
-// Example: src/routes/auth.routes.js
 const express = require('express');
 const router = express.Router();
+const { protect } = require('../middleware/auth.middleware');
+const { setBudget, getBudgets, deleteBudget } = require('../controllers/budget.controller');
 
-// ... routes defined here ...
+router.use(protect); // all budget routes need login
 
-module.exports = router; // 👈 CRITICAL: Must be at the very bottom
+router.route('/').post(setBudget).get(getBudgets);
+router.route('/:id').delete(deleteBudget);
+
+module.exports = router;

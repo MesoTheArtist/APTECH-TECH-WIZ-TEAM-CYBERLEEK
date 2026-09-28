@@ -9,187 +9,266 @@ class Transactions extends StatelessWidget {
       length: 3,
       child: Scaffold(
         body: SafeArea(
-          child: Padding(
-            padding: const EdgeInsets.symmetric(horizontal: 12),
-            child: Column(
-              crossAxisAlignment: CrossAxisAlignment.start,
-              children: [
-                const SizedBox(height: 10),
-
-                const Text(
-                  'Transactions',
-                  style: TextStyle(
-                    fontSize: 22,
-                    fontWeight: FontWeight.bold,
-                  ),
+          child: Column(
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: [
+              Container(
+                width: double.infinity,
+                padding: const EdgeInsets.symmetric(
+                  horizontal: 15,
+                  vertical: 12,
                 ),
+                color: Colors.teal.shade900,
+                child: Row(
+                  children: [
+                    Container(
+                      width: 38,
+                      height: 38,
+                      decoration: BoxDecoration(
+                        color: Colors.yellow,
+                        borderRadius: BorderRadius.circular(10),
+                      ),
+                      child: const Center(
+                        child: Text(
+                          'P',
+                          style: TextStyle(
+                            fontWeight: FontWeight.bold,
+                            fontSize: 22,
+                          ),
+                        ),
+                      ),
+                    ),
 
-                const SizedBox(height: 3),
+                    const SizedBox(width: 8),
 
-                const Text(
-                  'Track your spending and stay in control.',
-                  style: TextStyle(
-                    fontSize: 12,
-                    color: Colors.blueGrey,
-                  ),
+                    const Text(
+                      'PennyPal',
+                      style: TextStyle(
+                        color: Colors.white,
+                        fontSize: 20,
+                        fontWeight: FontWeight.bold,
+                      ),
+                    ),
+
+                    const Spacer(),
+
+                    const CircleAvatar(
+                      radius: 17,
+                      backgroundColor: Colors.white,
+                      child: Icon(
+                        Icons.person,
+                        color: Colors.teal,
+                      ),
+                    ),
+
+                    const SizedBox(width: 8),
+
+                    const Text(
+                      'Sarah J.',
+                      style: TextStyle(
+                        color: Colors.white,
+                        fontSize: 14,
+                      ),
+                    ),
+                  ],
                 ),
+              ),
 
-                const SizedBox(height: 12),
-
-                Container(
-                  width: double.infinity,
-                  padding: const EdgeInsets.all(15),
-                  decoration: BoxDecoration(
-                    color: Colors.teal,
-                    borderRadius: BorderRadius.circular(12),
-                  ),
-                  child: Row(
+              Expanded(
+                child: Padding(
+                  padding: const EdgeInsets.symmetric(horizontal: 12),
+                  child: Column(
+                    crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
-                      Expanded(
-                        child: Column(
-                          crossAxisAlignment: CrossAxisAlignment.start,
-                          children: const [
-                            Text(
-                              'Total Spent',
-                              style: TextStyle(
-                                color: Colors.white,
-                                fontSize: 11,
+                      const SizedBox(height: 10),
+
+                      const Text(
+                        'Transactions',
+                        style: TextStyle(
+                          fontSize: 22,
+                          fontWeight: FontWeight.bold,
+                        ),
+                      ),
+
+                      const SizedBox(height: 3),
+
+                      const Text(
+                        'Track your spending and stay in control.',
+                        style: TextStyle(
+                          fontSize: 12,
+                          color: Colors.blueGrey,
+                        ),
+                      ),
+
+                      const SizedBox(height: 12),
+
+                      Container(
+                        width: double.infinity,
+                        padding: const EdgeInsets.all(15),
+                        decoration: BoxDecoration(
+                          color: Colors.teal,
+                          borderRadius: BorderRadius.circular(12),
+                        ),
+                        child: Row(
+                          children: [
+                            Expanded(
+                              child: Column(
+                                crossAxisAlignment: CrossAxisAlignment.start,
+                                children: const [
+                                  Text(
+                                    'Total Spent',
+                                    style: TextStyle(
+                                      color: Colors.white,
+                                      fontSize: 11,
+                                    ),
+                                  ),
+
+                                  SizedBox(height: 3),
+
+                                  Text(
+                                    '\$580.25',
+                                    style: TextStyle(
+                                      color: Colors.white,
+                                      fontSize: 24,
+                                      fontWeight: FontWeight.bold,
+                                    ),
+                                  ),
+
+                                  SizedBox(height: 3),
+
+                                  Text(
+                                    '12% less than last month',
+                                    style: TextStyle(
+                                      color: Colors.white,
+                                      fontSize: 9,
+                                    ),
+                                  ),
+                                ],
                               ),
                             ),
-                            SizedBox(height: 3),
-                            Text(
-                              '\$580.25',
-                              style: TextStyle(
-                                color: Colors.white,
-                                fontSize: 24,
-                                fontWeight: FontWeight.bold,
-                              ),
+
+                            Container(
+                              height: 50,
+                              width: 1,
+                              color: Colors.white30,
                             ),
-                            SizedBox(height: 3),
-                            Text(
-                              '12% less than last month',
-                              style: TextStyle(
-                                color: Colors.white,
-                                fontSize: 9,
-                              ),
+
+                            const SizedBox(width: 15),
+
+                            Column(
+                              crossAxisAlignment: CrossAxisAlignment.start,
+                              children: const [
+                                Text(
+                                  'Total Transactions',
+                                  style: TextStyle(
+                                    color: Colors.white,
+                                    fontSize: 9,
+                                  ),
+                                ),
+
+                                SizedBox(height: 3),
+
+                                Text(
+                                  '23',
+                                  style: TextStyle(
+                                    color: Colors.white,
+                                    fontSize: 18,
+                                    fontWeight: FontWeight.bold,
+                                  ),
+                                ),
+                              ],
                             ),
                           ],
                         ),
                       ),
 
+                      const SizedBox(height: 12),
+
                       Container(
-                        height: 50,
-                        width: 1,
-                        color: Colors.white30,
-                      ),
-
-                      const SizedBox(width: 15),
-
-                      Column(
-                        crossAxisAlignment: CrossAxisAlignment.start,
-                        children: const [
-                          Text(
-                            'Total Transactions',
-                            style: TextStyle(
-                              color: Colors.white,
-                              fontSize: 9,
-                            ),
+                        height: 35,
+                        decoration: BoxDecoration(
+                          color: Colors.blueGrey.shade50,
+                          borderRadius: BorderRadius.circular(20),
+                        ),
+                        child: TabBar(
+                          indicator: BoxDecoration(
+                            color: Colors.teal,
+                            borderRadius: BorderRadius.circular(20),
                           ),
-                          SizedBox(height: 3),
-                          Text(
-                            '23',
-                            style: TextStyle(
-                              color: Colors.white,
-                              fontSize: 18,
-                              fontWeight: FontWeight.bold,
-                            ),
+                          indicatorSize: TabBarIndicatorSize.tab,
+                          dividerColor: Colors.transparent,
+                          labelColor: Colors.white,
+                          unselectedLabelColor: Colors.black87,
+                          labelStyle: const TextStyle(
+                            fontSize: 11,
                           ),
-                        ],
+                          tabs: const [
+                            Tab(text: 'All'),
+                            Tab(text: '🟢 Income'),
+                            Tab(text: '🔴 Expenses'),
+                          ],
+                        ),
+                      ),
+
+                      const SizedBox(height: 10),
+
+                      Container(
+                        height: 35,
+                        padding: const EdgeInsets.symmetric(horizontal: 12),
+                        decoration: BoxDecoration(
+                          color: Colors.blueGrey.shade50,
+                          borderRadius: BorderRadius.circular(10),
+                        ),
+                        child: Row(
+                          children: const [
+                            Icon(
+                              Icons.calendar_today_outlined,
+                              size: 15,
+                            ),
+
+                            SizedBox(width: 8),
+
+                            Text(
+                              'This Month (Oct 1 - Oct 31)',
+                              style: TextStyle(fontSize: 10),
+                            ),
+
+                            Spacer(),
+
+                            Icon(
+                              Icons.keyboard_arrow_down,
+                              size: 18,
+                            ),
+                          ],
+                        ),
+                      ),
+
+                      const SizedBox(height: 12),
+
+                      const Text(
+                        'Today',
+                        style: TextStyle(
+                          fontSize: 12,
+                          fontWeight: FontWeight.bold,
+                        ),
+                      ),
+
+                      const SizedBox(height: 5),
+
+                      const Expanded(
+                        child: TabBarView(
+                          children: [
+                            AllTransactions(),
+                            IncomeTransactions(),
+                            ExpenseTransactions(),
+                          ],
+                        ),
                       ),
                     ],
                   ),
                 ),
-
-                const SizedBox(height: 12),
-
-                Container(
-                  height: 35,
-                  decoration: BoxDecoration(
-                    color: Colors.blueGrey.shade50,
-                    borderRadius: BorderRadius.circular(20),
-                  ),
-                  child: TabBar(
-                    indicator: BoxDecoration(
-                      color: Colors.teal,
-                      borderRadius: BorderRadius.circular(20),
-                    ),
-                    indicatorSize: TabBarIndicatorSize.tab,
-                    dividerColor: Colors.transparent,
-                    labelColor: Colors.white,
-                    unselectedLabelColor: Colors.black87,
-                    labelStyle: const TextStyle(
-                      fontSize: 11,
-                    ),
-                    tabs: const [
-                      Tab(text: 'All'),
-                      Tab(text: '🟢 Income'),
-                      Tab(text: '🔴 Expenses'),
-                    ],
-                  ),
-                ),
-
-                const SizedBox(height: 10),
-
-                Container(
-                  height: 35,
-                  padding: const EdgeInsets.symmetric(horizontal: 12),
-                  decoration: BoxDecoration(
-                    color: Colors.blueGrey.shade50,
-                    borderRadius: BorderRadius.circular(10),
-                  ),
-                  child: Row(
-                    children: const [
-                      Icon(
-                        Icons.calendar_today_outlined,
-                        size: 15,
-                      ),
-                      SizedBox(width: 8),
-                      Text(
-                        'This Month (Oct 1 - Oct 31)',
-                        style: TextStyle(fontSize: 10),
-                      ),
-                      Spacer(),
-                      Icon(
-                        Icons.keyboard_arrow_down,
-                        size: 18,
-                      ),
-                    ],
-                  ),
-                ),
-
-                const SizedBox(height: 12),
-
-                const Text(
-                  'Today',
-                  style: TextStyle(
-                    fontSize: 12,
-                    fontWeight: FontWeight.bold,
-                  ),
-                ),
-
-                const SizedBox(height: 5),
-
-                const Expanded(
-                  child: TabBarView(
-                    children: [
-                      AllTransactions(),
-                      IncomeTransactions(),
-                      ExpenseTransactions(),
-                    ],
-                  ),
-                ),
-              ],
-            ),
+              ),
+            ],
           ),
         ),
 
@@ -199,7 +278,7 @@ class Transactions extends StatelessWidget {
           unselectedItemColor: Colors.grey,
           onTap: (index) {
             if (index == 0) {
-              Navigator.pushNamed(context, '/');
+              Navigator.pushNamed(context, '/dashboard');
             } else if (index == 2) {
               Navigator.pushNamed(context, '/mybudget');
             } else if (index == 3) {

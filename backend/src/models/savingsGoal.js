@@ -13,4 +13,4 @@ const savingsGoalSchema = new mongoose.Schema(
   { timestamps: true }
 );
 
-module.exports = mongoose.model('SavingsGoal', savingsGoalSchema);
+module.exports = mongoose.models.SavingsGoal || mongoose.model('SavingsGoal', savingsGoalSchema);
